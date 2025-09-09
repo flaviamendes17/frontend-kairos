@@ -1,6 +1,5 @@
-![Banner Kairos](./public/images/banner-kairos.jpg)
 
-# 🕐 **KAIROS** - Sistema de Gerenciamento de Tempo
+# 🕐 **KAIROS** - Transforme seu tempo em progresso 
 
 > *"Kairos" - Do grego antigo, significa "momento certo" ou "tempo oportuno"*
 
