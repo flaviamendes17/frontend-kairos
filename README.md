@@ -185,7 +185,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 - **Projeto**: Kairos - Sistema de Gerenciamento de Tempo
 - **Versão**: 1.0.0
 - **Framework**: Next.js 15
-- **Autor**: Sua equipe de desenvolvimento
+- **Autor**: Flavia Mendes
 
 ---
 
