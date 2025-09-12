@@ -12,10 +12,9 @@ export default function Home() {
         <div className="divider"></div>
       </div>
 
-      {/* Seção de Apresentação */}
       <div className="intro-section">
         <div className="intro-card">
-          <h2>🎯 Organize seu tempo, alcance seus objetivos</h2>
+          <h2>Organize seu tempo, alcance seus objetivos</h2>
           <p>
             O Kairos é sua ferramenta completa para gerenciamento de tempo e produtividade. 
             Controle suas tarefas, acompanhe seu progresso e tenha insights valiosos sobre 
@@ -27,7 +26,7 @@ export default function Home() {
       {/* Cards de Funcionalidades */}
       <div className="features-grid">
         <div className="feature-card">
-          <div className="feature-icon">📊</div>
+          <img src='/icon/dashboard.png' alt='Dashboard Icon' className='feature-icon'style={{ width: 55, height: 55 }}/>
           <h3>Dashboard Inteligente</h3>
           <p>Visualize todas suas métricas de produtividade em um só lugar</p>
           <Link href="/dashboard" className="btn">
@@ -52,7 +51,7 @@ export default function Home() {
             Ver Insights
           </Link>
         </div>
-
+      
         <div className="feature-card">
           <div className="feature-icon">👤</div>
           <h3>Perfil Personalizado</h3>
@@ -62,8 +61,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* mudar emoji para icon (excedi o limite de baixar icones) )} */}🚨
 
-      {/* Call to Action */}
       <div className="cta-section">
         <div className="cta-card">
           <h2>🚀 Pronto para começar?</h2>

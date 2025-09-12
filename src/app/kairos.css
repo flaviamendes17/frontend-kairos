@@ -1227,7 +1227,7 @@ body:has(.banner-section) .main-content {
 }
 
 .intro-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.353);
   padding: 2.5rem;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -1251,9 +1251,12 @@ body:has(.banner-section) .main-content {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feature-card {
@@ -1539,6 +1542,11 @@ body:has(.banner-section) .main-content {
   
   .dashboard {
     grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .controls {

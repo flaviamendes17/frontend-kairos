@@ -9,10 +9,10 @@ const Navigation = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { href: '/dashboard', label: 'Dashboard', icon: '📊' },
-    { href: '/tarefas', label: 'Tarefas', icon: '📝' },
-    { href: '/insights', label: 'Insights', icon: '📈' },
-    { href: '/sobre-mim', label: 'Sobre Mim', icon: '👤' },
+    { href: '/dashboard', label: 'DASHBOARD'},
+    { href: '/tarefas', label: 'TAREFAS'},
+    { href: '/insights', label: 'INSIGHTS'},
+    { href: '/sobre-mim', label: 'SOBRE MIM'},
   ];
 
   return (

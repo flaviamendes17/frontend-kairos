@@ -1,5 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import './kairos.css'
+import Navigation from './components/Navigation'
+import Banner from './components/Banner'
+import Footer from './components/footer/Footer'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,10 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import './globals.css'
-import './kairos.css'
-import Navigation from './components/Navigation'
-import Banner from './components/Banner'
+
 
 export const metadata = {
   title: 'Kairos - Sistema de Gerenciamento de Tempo',
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <main className="main-content">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )
