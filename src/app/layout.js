@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 import './globals.css'
 import './kairos.css'
 import Navigation from './components/Navigation'
-import Image from 'next/image'
+import Banner from './components/Banner'
 
 export const metadata = {
   title: 'Kairos - Sistema de Gerenciamento de Tempo',
@@ -29,16 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-BR">
       <body>
         <Navigation />
-        <div className="banner-section">
-          <Image 
-            src="/images/banner.png" 
-            alt="Banner Kairos" 
-            className="banner-image"
-            width={1200}
-            height={300}
-            priority
-          />
-        </div>
+        <Banner />
         <main className="main-content">
           {children}
         </main>

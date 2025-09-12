@@ -176,8 +176,13 @@ export default function SobreMim() {
       {/* Perfil do Usuário */}
       <div className="profile-section">
         <div className="profile-card">
-          <div className="profile-avatar">
-            <span className="avatar-icon">👤</span>
+          <div className="avatar-container">
+            <div className="avatar-border"></div>
+            <img
+              src="/images/eu.jpg"
+              alt="Foto de Flavia Mendes"
+              className="avatar-img"
+            />
           </div>
           <div className="profile-info">
             <h2>Flavia Mendes</h2>
@@ -289,17 +294,6 @@ export default function SobreMim() {
           )}
         </div>
       </div>
-
-
-
-            
-
-           
-
-           
-
-
-        
 
       {loading && (
         <div className="loading">

@@ -19,7 +19,7 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <div className="nav-brand">
-          <Link href="/dashboard" className="nav-logo">
+          <Link href="/" className="nav-logo">
             <Image 
               src="/icon/ampulheta-semfundo.png" 
               alt="Kairos Logo" 
