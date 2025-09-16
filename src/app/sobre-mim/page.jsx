@@ -239,65 +239,137 @@ export default function SobreMim() {
         </div>
       )}
 
-      {/* Informações do Sistema */}
-      <div className="system-info">
-        <h2>Informações do Sistema</h2>
-        <div className="info-cards-grid">
-          <div className="info-card">
-            <div className="card-content">
-              <h3>Sobre o Kairos</h3>
-              <p>
-                Kairos é um sistema de gerenciamento de tempo focado na produtividade 
-                e organização pessoal. O nome "Kairos" vem do grego antigo e significa 
-                "momento certo" ou "tempo oportuno".
-              </p>
+        <div className="timeline-container">
+        <div className="timeline-item">
+          <div className="timeline-dot purple"></div>
+          <div className="timeline-content">
+            <h3>Sobre o Kairos</h3>
+            <p>
+              Kairos é um sistema de gerenciamento de tempo focado na produtividade 
+              e organização pessoal. O nome "Kairos" vem do grego antigo e significa 
+              "momento certo" ou "tempo oportuno".
+            </p>
+          </div>
+          <div className="timeline-decoration">
+            <div className="decoration-circle">⏰</div>
+            <div className="decoration-text">Momento Certo</div>
+          </div>
+        </div>
+
+        <div className="timeline-item">
+          <div className="timeline-dot blue"></div>
+          <div className="timeline-content">
+            <h3>Objetivos</h3>
+            <div className="timeline-objectives">
+              <div className="objective-item">
+                <span className="objective-icon">🎯</span>
+                <span>Organizar tarefas de estudo de forma eficiente</span>
+              </div>
+              <div className="objective-item">
+                <span className="objective-icon">📈</span>
+                <span>Acompanhar progresso e produtividade</span>
+              </div>
+              <div className="objective-item">
+                <span className="objective-icon">🔍</span>
+                <span>Identificar padrões e oportunidades de melhoria</span>
+              </div>
+              <div className="objective-item">
+                <span className="objective-icon">🎪</span>
+                <span>Manter foco nos objetivos pessoais</span>
+              </div>
             </div>
           </div>
-
-          <div className="info-card">
-            <div className="card-content">
-              <h3>Objetivos</h3>
-              <ul>
-                <li>Organizar tarefas de estudo de forma eficiente</li>
-                <li>Acompanhar progresso e produtividade</li>
-                <li>Identificar padrões e oportunidades de melhoria</li>
-                <li>Manter foco nos objetivos pessoais</li>
-              </ul>
+          <div className="timeline-decoration">
+            <div className="decoration-stats">
+              <div className="mini-stat">
+                <span className="mini-number">4</span>
+                <span className="mini-label">Metas</span>
+              </div>
+              <div className="mini-stat">
+                <span className="mini-number">100%</span>
+                <span className="mini-label">Foco</span>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="info-card">
-            <div className="card-content">
-              <h3>Funcionalidades</h3>
-              <ul>
-                <li><strong>Dashboard:</strong> Visão geral do progresso</li>
-                <li><strong>Tarefas:</strong> Gerenciamento completo de atividades</li>
-                <li><strong>Insights:</strong> Análises e métricas de desempenho</li>
-                <li><strong>Perfil:</strong> Informações pessoais e estatísticas</li>
-              </ul>
+        <div className="timeline-item">
+          <div className="timeline-dot green"></div>
+          <div className="timeline-content">
+            <h3>Funcionalidades</h3>
+            <div className="timeline-features">
+              <div className="feature-timeline-item">
+                <div className="feature-timeline-icon">📊</div>
+                <div className="feature-timeline-text">
+                  <strong>Dashboard</strong>
+                  <span>Visão geral do progresso e métricas importantes</span>
+                </div>
+              </div>
+              <div className="feature-timeline-item">
+                <div className="feature-timeline-icon">✅</div>
+                <div className="feature-timeline-text">
+                  <strong>Tarefas</strong>
+                  <span>Gerenciamento completo de atividades e projetos</span>
+                </div>
+              </div>
+              <div className="feature-timeline-item">
+                <div className="feature-timeline-icon">📈</div>
+                <div className="feature-timeline-text">
+                  <strong>Insights</strong>
+                  <span>Análises detalhadas e métricas de desempenho</span>
+                </div>
+              </div>
+              <div className="feature-timeline-item">
+                <div className="feature-timeline-icon">👤</div>
+                <div className="feature-timeline-text">
+                  <strong>Perfil</strong>
+                  <span>Informações pessoais e estatísticas individuais</span>
+                </div>
+              </div>
             </div>
           </div>
+          <div className="timeline-decoration">
+            <div className="decoration-tech">
+              <div className="tech-item">React</div>
+              <div className="tech-item">CSS3</div>
+              <div className="tech-item">Next.js</div>
+            </div>
+          </div>
+        </div>
 
-          <div className="info-card">
-            <div className="card-content">
-              <h3>Status da Conexão</h3>
-              {data && (
-                <div className="connection-status">
-                  <div className="status-row">
-                    <span>Status do Banco:</span>
-                    <span className={`status-badge ${data.database_connected ? 'connected' : 'disconnected'}`}>
-                      {data.database_connected ? '✅ Conectado' : '❌ Desconectado'}
-                    </span>
-                  </div>
-                  <div className="status-row">
-                    <span>Última Atualização:</span>
-                    <span>{new Date(data.timestamp).toLocaleString('pt-BR')}</span>
+        <div className="timeline-item">
+          <div className="timeline-dot orange"></div>
+          <div className="timeline-content">
+            <h3>Status da Conexão</h3>
+            {data && (
+              <div className="timeline-status">
+                <div className="status-timeline-item">
+                  <div className="status-timeline-label">Status do Banco:</div>
+                  <div className={`status-timeline-indicator ${data.database_connected ? 'connected' : 'disconnected'}`}>
+                    <div className="status-timeline-dot"></div>
+                    <span>{data.database_connected ? 'Conectado' : 'Desconectado'}</span>
                   </div>
                 </div>
-              )}
+                <div className="status-timeline-item">
+                  <div className="status-timeline-label">Última Atualização:</div>
+                  <div className="status-timeline-time">
+                    {new Date(data.timestamp).toLocaleString('pt-BR')}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="timeline-decoration">
+            <div className="decoration-progress">
+              <div className="circular-progress">
+                <div className="circle-bg">
+                  <div className="circle-fill" style={{'--progress': data?.database_connected ? '100%' : '0%'}}></div>
+                  <span className="circle-text">{data?.database_connected ? '✅' : '❌'}</span>
+                </div>
+                <div className="progress-label">Conexão</div>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
 
