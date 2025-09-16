@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import './sobre-mim.css';
 
 export default function SobreMim() {
   const [data, setData] = useState(null);
@@ -165,31 +166,35 @@ export default function SobreMim() {
   const stats = getPersonalStats();
 
   return (
-    <div className="container">
-      {/* Header da página */}
-      <div className="page-header">
-        <h1>Sobre Mim</h1>
-        <div className="page-actions">
-        </div>
-      </div>
-
+    <div className="sobre-mim-page">
       {/* Perfil do Usuário */}
       <div className="profile-section">
-        <div className="profile-card">
-          <div className="avatar-container">
-            <div className="avatar-border"></div>
+        <div className="profile-container">
+          <div className="avatar-section">
             <img
               src="/images/eu.jpg"
               alt="Foto de Flavia Mendes"
               className="avatar-img"
             />
           </div>
-          <div className="profile-info">
+          <div className="profile-content">
             <h2>Flavia Mendes</h2>
+            <div className="name-underline"></div>
             <p className="profile-role">Estudante | Organização Pessoal</p>
             <p className="profile-description">
-            Estudante do último semestre de desenvolvimento de sistemas, criei o Kairos para aprimorar minha organização pessoal e ajudar outros estudantes a gerenciarem melhor seu tempo e tarefas.
+              Estudante do último semestre de desenvolvimento de sistemas, criei o Kairos para aprimorar minha organização pessoal e ajudar outros estudantes a gerenciarem melhor seu tempo e tarefas. Além de servir como um projeto de encerramento do curso.
             </p>
+            <div className="profile-highlights">
+              <div className="highlight-item">
+                <span>Estudante de Desenvolvimento de Sistemas</span>
+              </div>
+              <div className="highlight-item">
+                <span>Criadora do sistema Kairos</span>
+              </div>
+              <div className="highlight-item">
+                <span>Desenvolvedora Full Stack</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -200,7 +205,6 @@ export default function SobreMim() {
           <h2>Minhas Estatísticas</h2>
           <div className="stats-grid">
             <div className="stat-card achievement">
-              <div className="stat-icon">🏆</div>
               <div className="stat-content">
                 <h3>Taxa de Sucesso</h3>
                 <div className="stat-number">{stats.taxaSucesso}%</div>
@@ -209,7 +213,6 @@ export default function SobreMim() {
             </div>
 
             <div className="stat-card productivity">
-              <div className="stat-icon">📈</div>
               <div className="stat-content">
                 <h3>Produtividade</h3>
                 <div className="stat-number">{stats.mediaTarefasPorDia}</div>
@@ -218,7 +221,6 @@ export default function SobreMim() {
             </div>
 
             <div className="stat-card streak">
-              <div className="stat-icon">🔥</div>
               <div className="stat-content">
                 <h3>Sequência Atual</h3>
                 <div className="stat-number">{stats.sequenciaAtual}</div>
@@ -227,7 +229,6 @@ export default function SobreMim() {
             </div>
 
             <div className="stat-card total">
-              <div className="stat-icon">📊</div>
               <div className="stat-content">
                 <h3>Total Concluído</h3>
                 <div className="stat-number">{stats.tarefasConcluidas}</div>
@@ -241,57 +242,62 @@ export default function SobreMim() {
       {/* Informações do Sistema */}
       <div className="system-info">
         <h2>Informações do Sistema</h2>
-        <div className="info-cards">
+        <div className="info-cards-grid">
           <div className="info-card">
-            <h3>🕐 Sobre o Kairos</h3>
-            <p>
-              Kairos é um sistema de gerenciamento de tempo focado na produtividade 
-              e organização pessoal. O nome "Kairos" vem do grego antigo e significa 
-              "momento certo" ou "tempo oportuno".
-            </p>
-          </div>
-
-          <div className="info-card">
-            <h3>🎯 Objetivos</h3>
-            <ul>
-              <li>Organizar tarefas de estudo de forma eficiente</li>
-              <li>Acompanhar progresso e produtividade</li>
-              <li>Identificar padrões e oportunidades de melhoria</li>
-              <li>Manter foco nos objetivos pessoais</li>
-            </ul>
-          </div>
-
-          <div className="info-card">
-            <h3>💡 Funcionalidades</h3>
-            <ul>
-              <li><strong>Dashboard:</strong> Visão geral do progresso</li>
-              <li><strong>Tarefas:</strong> Gerenciamento completo de atividades</li>
-              <li><strong>Insights:</strong> Análises e métricas de desempenho</li>
-              <li><strong>Perfil:</strong> Informações pessoais e estatísticas</li>
-            </ul>
-          </div>
-
-          {data && (
-            <div className="info-card">
-              <h3>🔗 Status da Conexão</h3>
-              <div className="connection-status">
-                <div className="status-row">
-                  <span>Status do Banco:</span>
-                  <span className={`status-badge ${data.database_connected ? 'connected' : 'disconnected'}`}>
-                    {data.database_connected ? '✅ Conectado' : '❌ Desconectado'}
-                  </span>
-                </div>
-                <div className="status-row">
-                  <span>Última Atualização:</span>
-                  <span>{new Date(data.timestamp).toLocaleString('pt-BR')}</span>
-                </div>
-                <div className="status-row">
-                  <span>API Endpoint:</span>
-                  <span className="endpoint">http://localhost:3000/api/kairos</span>
-                </div>
-              </div>
+            <div className="card-content">
+              <h3>Sobre o Kairos</h3>
+              <p>
+                Kairos é um sistema de gerenciamento de tempo focado na produtividade 
+                e organização pessoal. O nome "Kairos" vem do grego antigo e significa 
+                "momento certo" ou "tempo oportuno".
+              </p>
             </div>
-          )}
+          </div>
+
+          <div className="info-card">
+            <div className="card-content">
+              <h3>Objetivos</h3>
+              <ul>
+                <li>Organizar tarefas de estudo de forma eficiente</li>
+                <li>Acompanhar progresso e produtividade</li>
+                <li>Identificar padrões e oportunidades de melhoria</li>
+                <li>Manter foco nos objetivos pessoais</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="info-card">
+            <div className="card-content">
+              <h3>Funcionalidades</h3>
+              <ul>
+                <li><strong>Dashboard:</strong> Visão geral do progresso</li>
+                <li><strong>Tarefas:</strong> Gerenciamento completo de atividades</li>
+                <li><strong>Insights:</strong> Análises e métricas de desempenho</li>
+                <li><strong>Perfil:</strong> Informações pessoais e estatísticas</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="info-card">
+            <div className="card-content">
+              <h3>Status da Conexão</h3>
+              {data && (
+                <div className="connection-status">
+                  <div className="status-row">
+                    <span>Status do Banco:</span>
+                    <span className={`status-badge ${data.database_connected ? 'connected' : 'disconnected'}`}>
+                      {data.database_connected ? '✅ Conectado' : '❌ Desconectado'}
+                    </span>
+                  </div>
+                  <div className="status-row">
+                    <span>Última Atualização:</span>
+                    <span>{new Date(data.timestamp).toLocaleString('pt-BR')}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
 
