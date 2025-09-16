@@ -1,0 +1,245 @@
+/* ===== MODAL E FORMULÁRIOS ===== */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-hover);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  color: var(--kairos-purple-dark);
+  font-size: 1.5rem;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.closeBtn:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.modalBody {
+  padding: 1.5rem;
+}
+
+.modalFooter {
+  padding: 1.5rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--kairos-purple);
+  box-shadow: 0 0 0 3px rgba(196, 165, 225, 0.1);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btnPrimary {
+  background: var(--kairos-purple);
+  color: white;
+  border: none;
+}
+
+.btnPrimary:hover {
+  background: var(--kairos-purple-dark);
+}
+
+.btnPrimary:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.btnSecondary {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btnSecondary:hover {
+  background: #e8e8e8;
+}
+
+/* ===== BOTÕES DE AÇÃO NAS TAREFAS ===== */
+.taskActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.statusButtons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.actionBtn:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+.active {
+  background: var(--kairos-purple);
+  color: white;
+  border-color: var(--kairos-purple);
+}
+
+.active:hover {
+  background: var(--kairos-purple-dark);
+}
+
+/* Cores específicas para cada status */
+.statusButtons .actionBtn:nth-child(1).active {
+  background: #ffc107;
+  border-color: #ffc107;
+  color: #333;
+}
+
+.statusButtons .actionBtn:nth-child(2).active {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+.statusButtons .actionBtn:nth-child(3).active {
+  background: #28a745;
+  border-color: #28a745;
+}
+
+/* Botão de remover */
+.removeBtn {
+  background: #fff5f5 !important;
+  color: #dc3545 !important;
+  border-color: #f5c6cb !important;
+}
+
+.removeBtn:hover {
+  background: #f8d7da !important;
+  border-color: #f1b0b7 !important;
+  color: #721c24 !important;
+}
+
+/* ===== RESPONSIVIDADE DOS COMPONENTES ===== */
+@media (max-width: 768px) {
+  .modalContent {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+  
+  .modalHeader,
+  .modalBody,
+  .modalFooter {
+    padding: 1rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .modalFooter {
+    flex-direction: column;
+  }
+  
+  .taskActions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .statusButtons {
+    justify-content: center;
+  }
+  
+  .actionBtn {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .removeBtn {
+    align-self: center;
+    max-width: 200px;
+  }
+}

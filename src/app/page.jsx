@@ -61,7 +61,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* mudar emoji para icon (excedi o limite de baixar icones) )} */}🚨
+      {/* mudar emoji para icon (excedi o limite de baixar icones) )} */}
 
       <div className="cta-section">
         <div className="cta-card">

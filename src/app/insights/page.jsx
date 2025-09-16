@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import styles from './insights.module.css';
 
 export default function Insights() {
   const [data, setData] = useState(null);
@@ -210,6 +212,47 @@ export default function Insights() {
           <button className="btn" onClick={fetchKairosData} disabled={loading}>
             {loading ? 'Atualizando...' : '🔄 Atualizar'}
           </button>
+        </div>
+      </div>
+
+      <div className={styles.insightsGallery}>
+        <div className={styles.galleryGrid}>
+          <div className={styles.galleryItem}>
+            <Image 
+              src="/images/estudoconfy.jpg" 
+              alt="Produtividade e Organização" 
+              width={300}
+              height={200}
+              className={styles.galleryImage}
+            />
+          </div>
+          <div className={styles.galleryItem}>
+            <Image 
+              src="/images/palestra.jpg" 
+              alt="Planejamento e Estratégia" 
+              width={300}
+              height={200}
+              className={styles.galleryImage}
+            />
+          </div>
+          <div className={styles.galleryItem}>
+            <Image 
+              src="/images/lifeofmydreams.jpg" 
+              alt="I am creating my life" 
+              width={300}
+              height={200}
+              className={styles.galleryImage}
+            />
+          </div>
+          <div className={styles.galleryItem}>
+            <Image 
+              src="/images/telakairos.png" 
+              alt="Tecnologia e Desenvolvimento" 
+              width={300}
+              height={200}
+              className={styles.galleryImage}
+            />
+          </div>
         </div>
       </div>
 
